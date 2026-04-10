@@ -44,7 +44,7 @@ function createItem(){
     item.style.left = Math.random()*90 + "%";
     item.style.fontSize = "30px";
 
-    document.getElementById("catchGame").appendChild(item);
+    document.getElementById("fallArea").appendChild(item);
 
     let fall = setInterval(()=>{
         let top = parseInt(item.style.top);
