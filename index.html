@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>キャッチ</title>
+
+<style>
+body {
+    margin: 0;
+    background: black;
+    color: #00ff66;
+    font-family: monospace;
+    overflow: hidden;
+}
+
+/* 上バー */
+.top-bar {
+    background: #00ff66;
+    color: black;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+/* 戻る */
+.back-btn {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+/* タイマー */
+#timeBox {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+}
+
+/* スコア */
+#scoreBox {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+
+/* プレイヤー */
+#player {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 落下エリア */
+#fallArea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 上バー -->
+<div class="top-bar">
+    <div class="back-btn" onclick="goBack()">← 戻る</div>
+    キャッチ
+</div>
+
+<!-- タイマー -->
+<div id="timeBox">
+    ⏱ <span id="time">25</span>
+</div>
+
+<!-- スコア -->
+<div id="scoreBox">
+    ⭐ <span id="score">0</span>
+</div>
+
+<!-- 落下物エリア -->
+<div id="fallArea"></div>
+
+<!-- プレイヤー -->
+<img id="player" src="catch.png" width="80">
+
+<script src="catch.js"></script>
+
+<script>
+function goBack(){
+    window.history.back();
+}
+
+/* ゲーム開始（元コードから） */
+window.onload = () => {
+    startCatchGame();
+};
+</script>
+
+</body>
+</html>
